@@ -23,11 +23,17 @@
  * @return int
  */
 function paiza_secret(int $n1, int $n2): int {
-    if (($sum = $n1 + $n2) >= 10) {
-        return $sum - 10;
-    }
-
-    return $sum;
+    return ($n1 + $n2) % 10;
 }
+
+// Or
+
+//function paiza_secret(int $n1, int $n2): int {
+//    if (($sum = $n1 + $n2) >= 10) {
+//        return $sum - 10;
+//    }
+//
+//    return $sum;
+//}
 
 echo paiza_secret(...explode(' ', fgets(STDIN)));
